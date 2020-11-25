@@ -1,8 +1,19 @@
 package com.capgemini.greetingapp.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="GREETINGS")
 public class Greeting {
-	private int id;
-	private String message;
+	@Id
+	private final int id;
+	private final String message;
+	public Greeting() {
+		id=0;
+		message = "";
+	}
 	
 	public Greeting(int id,String message) {
 		this.id=id;
@@ -14,10 +25,10 @@ public class Greeting {
 	public String getMessage() {
 		return this.message;
 	}
-	public void setId(int id) {
-		this.id=id;
-	}
-	public void setMessage(String message) {
-		this.message=message;
-	}
+//	public void setId(int id) {
+//		this.id=id;
+//	}
+//	public void setMessage(String message) {
+//		this.message=message;
+//	}
 }
